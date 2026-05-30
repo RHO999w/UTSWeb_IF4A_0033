@@ -128,4 +128,22 @@ function addToRecruitmentBoard(nameInput, zoneInput) {
     }
 }
 
+function applyRecruitFilter() {
+    let keyword = $('#recruitSearch').val().toLowerCase().trim();
+    let zone    = $('#recruitFilter').val();
+
+    $('#recruitBody tr').each(function() {
+        let name    = $(this).find('td:eq(1)').text().toLowerCase();
+        let rowZone = $(this).data('zone');
+
+        let matchName = name.includes(keyword);
+        let matchZone = (zone === 'ALL') || (rowZone === zone);
+
+        $(this).toggle(matchName && matchZone);
+    });
+}
+
+$('#recruitSearch').on('input', applyRecruitFilter);
+$('#recruitFilter').on('change', applyRecruitFilter);
+
 });
