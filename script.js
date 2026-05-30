@@ -84,4 +84,48 @@ $('#gflForm').submit(function(event) {
     }
 });
 
+function addToRecruitmentBoard(nameInput, zoneInput) {
+    let tbody    = document.getElementById('recruitBody');
+    let rowCount = tbody.rows.length + 1;
+    let num      = String(rowCount).padStart(3, '0');
+
+    let badgeClass = 'yellow';
+    let zoneLabel  = 'Yellow Zone';
+    let zoneKey    = 'Yellow';
+
+    if (zoneInput.includes('Black')) {
+        badgeClass = 'black';
+        zoneLabel  = 'Black Zone';
+        zoneKey    = 'Black';
+    } else if (zoneInput.includes('Red')) {
+        badgeClass = 'red';       
+        zoneLabel  = 'Red Zone';
+        zoneKey    = 'Red';
+    }
+
+    let rMonth = String(Math.floor(Math.random() * 12) + 1).padStart(2, '0');
+    let rDay   = String(Math.floor(Math.random() * 28) + 1).padStart(2, '0');
+    let rHour  = String(Math.floor(Math.random() * 24)).padStart(2, '0');
+    let rMin   = String(Math.floor(Math.random() * 60)).padStart(2, '0');
+    let ts     = `2064-${rMonth}-${rDay} ${rHour}:${rMin}`;
+
+    let tr = document.createElement('tr');
+    tr.setAttribute('data-zone', zoneKey);
+    tr.classList.add('row-new');
+    tr.innerHTML = `
+        <td class="text-secondary">${num}</td>
+        <td>${nameInput}</td>
+        <td><span class="badge-zone ${badgeClass}">${zoneLabel}</span></td>
+        <td class="text-secondary">${ts}</td>
+        <td><button class="btn-status pending" onclick="toggleStatus(this)">PENDING</button></td>
+        <td><button class="btn-dismiss" onclick="dismissRow(this)">DISMISS</button></td>
+    `;
+
+    tbody.appendChild(tr);
+    
+    if (typeof updateRecruitCounter === "function") {
+        updateRecruitCounter();
+    }
+}
+
 });
