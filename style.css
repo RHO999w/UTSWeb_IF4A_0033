@@ -371,3 +371,59 @@ section#recruitment {
     filter: grayscale(0) brightness(1);
     transform: scale(1.2);
 }
+
+#alliances .alliances-inner {
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 1rem;
+}
+
+.alliance-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 0 56px;
+}
+
+#allianceCarousel { width: 100%; }
+#allianceCarousel .carousel-control-prev,
+#allianceCarousel .carousel-control-next {
+    top: 50% !important;
+    transform: translateY(-50%);
+    width: 44px !important;
+    height: 44px !important;
+}
+
+#allianceCarousel .carousel-control-prev { left: -52px !important; }
+#allianceCarousel .carousel-control-next { right: -52px !important; }
+
+.alliance-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.alliance-logo-wrapper img {
+    max-height: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.1));
+    transition: all 0.3s ease;
+}
+
+.alliance-logo-wrapper img:hover {
+    filter: drop-shadow(0 0 15px rgba(229,137,37,0.6));
+    transform: scale(1.02);
+}
+
+.alliance-info-text {
+    max-height: 240px;
+    overflow-y: auto;
+    padding-right: 12px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #f1f5f9 !important;
+}
+
+.alliance-info-text::-webkit-scrollbar { width: 4px; }
+.alliance-info-text::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+.alliance-info-text::-webkit-scrollbar-thumb { background: #e58925; border-radius: 2px; }
