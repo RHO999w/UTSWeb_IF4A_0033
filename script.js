@@ -33,4 +33,10 @@ $(document).ready(function() {
     }
 });
 
+    $('#zoneSlider').on('slid.bs.carousel', function(e) {
+            var targetIndex = e.to;
+        $('.zone-indicators .zone-dot').removeClass('active');
+        $('.zone-indicators .zone-dot').eq(targetIndex).addClass('active');
+        });
+
 });

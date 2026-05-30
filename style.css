@@ -339,3 +339,35 @@ section#recruitment {
     background-color: rgba(229,137,37,0.2) !important;
     border-color: #e58925 !important;
 }
+
+.zone-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.zone-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    opacity: 0.35;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.25; 
+    filter: grayscale(0.5) brightness(0.6);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zone-dot.active{
+    opacity: 1;
+    filter: grayscale(0) brightness(1.2);
+    transform: scale(1.4); 
+    box-shadow: 0 0 12px currentColor, 0 0 4px currentColor;
+}
+.zone-dot:hover {
+    opacity: 0.8;
+    filter: grayscale(0) brightness(1);
+    transform: scale(1.2);
+}
