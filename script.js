@@ -39,4 +39,18 @@ $(document).ready(function() {
         $('.zone-indicators .zone-dot').eq(targetIndex).addClass('active');
         });
 
+    function startLiveLogTicker() {
+    setInterval(function() {
+        let ticker = $('#liveLogTicker');
+        let itemHeight = ticker.find('li:first').outerHeight();
+
+        ticker.animate({ marginTop: -itemHeight }, 800, function() {
+            ticker.find('li:first').appendTo(ticker);
+            ticker.css({ marginTop: 0 });
+        });
+    }, 2500);
+}
+
+startLiveLogTicker();
+
 });
