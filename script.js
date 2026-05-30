@@ -1,3 +1,37 @@
+function toggleStatus(btn) {
+    if (btn.classList.contains('pending')) {
+        btn.classList.replace('pending', 'approved');
+        btn.textContent = 'APPROVED';
+    } else if (btn.classList.contains('approved')) {
+        btn.classList.replace('approved', 'rejected');
+        btn.textContent = 'REJECTED';
+    } else {
+        btn.classList.replace('rejected', 'pending');
+        btn.textContent = 'PENDING';
+    }
+    updateRecruitCounter();
+}
+
+function dismissRow(btn) {
+    $(btn).closest('tr').fadeOut(300, function() {
+        $(this).remove();
+        updateRecruitCounter();
+    });
+}
+
+function updateRecruitCounter() {
+    let total = $('#recruitBody tr:visible').length;
+    
+    let approved = $('#recruitBody tr .btn-status.approved').length;
+    let pending  = $('#recruitBody tr .btn-status.pending').length;
+    let rejected = $('#recruitBody tr .btn-status.rejected').length;
+    
+    $('#countTotal').text(total);
+    $('#countApproved').text(approved);
+    $('#countPending').text(pending);
+    $('#countRejected').text(rejected);
+}
+
 $(document).ready(function() {
 
     $('#unmuteBtn').click(function() {
@@ -141,29 +175,8 @@ function applyRecruitFilter() {
 
         $(this).toggle(matchName && matchZone);
     });
-}
-
-$('#recruitSearch').on('input', applyRecruitFilter);
-$('#recruitFilter').on('change', applyRecruitFilter);
-
-function toggleStatus(btn) {
-    if (btn.classList.contains('pending')) {
-        btn.classList.replace('pending', 'approved');
-        btn.textContent = 'APPROVED';
-    } else if (btn.classList.contains('approved')) {
-        btn.classList.replace('approved', 'rejected');
-        btn.textContent = 'REJECTED';
-    } else {
-        btn.classList.replace('rejected', 'pending');
-        btn.textContent = 'PENDING';
-    }
     updateRecruitCounter();
 }
-
-function dismissRow(btn) {
-    $(btn).closest('tr').fadeOut(300, function() {
-        $(this).remove();
-        updateRecruitCounter();
-    });
-}
+$('#recruitSearch').on('input', applyRecruitFilter);
+$('#recruitFilter').on('change', applyRecruitFilter);
 });
