@@ -242,3 +242,100 @@ section#recruitment {
 #desc .desc-scroll-area::-webkit-scrollbar { width: 4px; }
 #desc .desc-scroll-area::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
 #desc .desc-scroll-area::-webkit-scrollbar-thumb { background: #e58925; border-radius: 2px; }
+
+#world .zone-gallery-inner {
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.zone-carousel {
+    width: 100%;
+    position: relative;
+}
+
+.zone-slide {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: rgba(15,16,18,0.85);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.zone-img {
+    width: 480px;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+    background: #1a1c20;
+}
+
+.zone-caption {
+    padding: 24px 32px 24px 24px; 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.zone-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 3px 12px;
+    border: 1px solid;
+    border-radius: 2px;
+    font-family: monospace;
+    margin-bottom: 14px;
+}
+
+.zone-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 12px;
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+.zone-desc {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    line-height: 1.7;
+    font-family: monospace;
+    margin: 0 0 12px 0; 
+}
+
+.zone-desc:last-child {
+    margin-bottom: 0;
+}
+
+.zone-nav-prev,
+.zone-nav-next {
+    width: 44px !important;
+    height: 44px !important;
+    top: 42% !important;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.6) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    border-radius: 4px;
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.zone-nav-prev { left: -52px !important; }
+.zone-nav-next { right: -52px !important; }
+
+.zone-nav-prev:hover,
+.zone-nav-next:hover {
+    opacity: 1 !important;
+    background-color: rgba(229,137,37,0.2) !important;
+    border-color: #e58925 !important;
+}
