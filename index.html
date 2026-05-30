@@ -456,6 +456,74 @@
     </div>
 </section>
 
+<section id="recruitment" class="bg-black text-white">
+    <div class="recruitment-inner">
+        <div class="d-flex flex-wrap align-items-center justify-content-between mb-3 gap-2">
+            <div>
+                <p class="text-warning font-monospace m-0">Recruitment Board</p>
+                <h2 class="fw-bold text-uppercase mb-0">HUNTER REGISTRY</h2>
+            </div>
+        </div>
+
+        <div class="recruit-table-wrapper">
+            <table class="table table-dark table-bordered table-hover font-monospace mb-0 small" id="recruitTable">
+                <thead class="border-warning">
+                    <tr>
+                        <th class="text-warning" style="width:40px;">#</th>
+                        <th class="text-warning">CODENAME</th>
+                        <th class="text-warning">OPERATIONAL ZONE</th>
+                        <th class="text-warning">TIMESTAMP</th>
+                        <th class="text-warning" style="width:120px;">STATUS</th>
+                        <th class="text-warning" style="width:80px;">ACTION</th>
+                    </tr>
+                </thead>
+                <tbody id="recruitBody">
+                    <tr data-zone="Yellow">
+                        <td class="text-secondary">001</td>
+                        <td>Boris</td>
+                        <td><span class="badge-zone yellow">Yellow Zone</span></td>
+                        <td class="text-secondary">2064-03-12 08:21</td>
+                        <td><button class="btn-status approved" onclick="toggleStatus(this)">APPROVED</button></td>
+                        <td><button class="btn-dismiss" onclick="dismissRow(this)">DISMISS</button></td>
+                    </tr>
+                    <tr data-zone="Black">
+                        <td class="text-secondary">002</td>
+                        <td>Scarecrow</td>
+                        <td><span class="badge-zone black">Black Zone</span></td>
+                        <td class="text-secondary">2064-03-12 15:25</td>
+                        <td><button class="btn-status pending" onclick="toggleStatus(this)">PENDING</button></td>
+                        <td><button class="btn-dismiss" onclick="dismissRow(this)">DISMISS</button></td>
+                    </tr>
+                    <tr data-zone="Red">
+                        <td class="text-secondary">003</td>
+                        <td>Andoris</td>
+                        <td><span class="badge-zone Red">Red Zone</span></td>
+                        <td class="text-secondary">2064-03-18 22:17</td>
+                        <td><button class="btn-status pending" onclick="toggleStatus(this)">PENDING</button></td>
+                        <td><button class="btn-dismiss" onclick="dismissRow(this)">DISMISS</button></td>
+                    </tr>
+                    <tr data-zone="Yellow">
+                        <td class="text-secondary">004</td>
+                        <td>Artyom</td>
+                        <td><span class="badge-zone yellow">Yellow Zone</span></td>
+                        <td class="text-secondary">2064-03-15 09:03</td>
+                        <td><button class="btn-status approved" onclick="toggleStatus(this)">APPROVED</button></td>
+                        <td><button class="btn-dismiss" onclick="dismissRow(this)">DISMISS</button></td>
+                    </tr>
+                    <tr data-zone="Black">
+                        <td class="text-secondary">005</td>
+                        <td>Galbrena</td>
+                        <td><span class="badge-zone black">Black Zone</span></td>
+                        <td class="text-secondary">2064-03-18 22:17</td>
+                        <td><button class="btn-status rejected" onclick="toggleStatus(this)">REJECTED</button></td>
+                        <td><button class="btn-dismiss" onclick="dismissRow(this)">DISMISS</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
