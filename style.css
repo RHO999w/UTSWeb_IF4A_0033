@@ -18,6 +18,16 @@ body {
     height: 100vh;
 }
 
+.text-muted {
+    color: #cbd5e1 !important;
+}
+
+.form-label,
+label.form-label {
+    color: #e2e8f0 !important;
+    font-weight: 600;
+}
+
 header#main,
 section#fame,
 section#desc,
@@ -220,3 +230,15 @@ section#recruitment {
     z-index: 10;
     padding: 0 1rem;
 }
+
+#desc .desc-scroll-area {
+    width: 100%;
+    max-width: 720px;
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+#desc .desc-scroll-area::-webkit-scrollbar { width: 4px; }
+#desc .desc-scroll-area::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+#desc .desc-scroll-area::-webkit-scrollbar-thumb { background: #e58925; border-radius: 2px; }
