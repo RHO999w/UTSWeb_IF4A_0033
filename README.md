@@ -50,8 +50,10 @@ Sesuai dengan ketentuan ujian halaman 2, berikut adalah poin referensi utama yan
 - https://gf2exilium.sunborngame.com/main
 - https://iopwiki.com/wiki/Girls%27_Frontline_2:_Exilium
 - https://gf2.haoplay.com/en/
-                          
+
+  
 **Link Referensi Video Data:**
+- https://gf2.haoplay.com/en/
 - https://steamcommunity.com/sharedfiles/filedetails/?id=3382956197
 - https://youtu.be/GdgTeok70XA?si=15ky-TDu7YyAmy6R
 
