@@ -13,4 +13,24 @@ $(document).ready(function() {
         }
     });
 
+    $('#charSlider').on('slide.bs.carousel', function (e) {
+    var nextVideo = $(e.relatedTarget).data('video');
+    var videoEl = document.getElementById('fameBgVideo');
+
+    if (nextVideo && videoEl) {
+        videoEl.src = nextVideo;
+        videoEl.loop = true;
+        videoEl.muted = true;
+        videoEl.load();
+
+        var playPromise = videoEl.play();
+        if (playPromise !== undefined) {
+            playPromise.then(function() {
+            }).catch(function(error) {
+                console.log("Autoplay video terhambat sistem browser: ", error);
+            });
+        }
+    }
+});
+
 });
