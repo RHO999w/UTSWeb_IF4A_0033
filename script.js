@@ -53,4 +53,35 @@ $(document).ready(function() {
 
 startLiveLogTicker();
 
+$('#gflForm').submit(function(event) {
+    event.preventDefault();
+
+    let nameInput = $('#cmdName').val().trim();
+    let zoneInput = $('#cmdZone').val();
+    let isValid = true;
+
+    $('#cmdName').removeClass('is-invalid');
+    $('#nameError').addClass('d-none');
+
+    if (nameInput === '') {
+        $('#cmdName').addClass('is-invalid');
+        $('#nameError').removeClass('d-none');
+        isValid = false;
+    }
+
+    if (isValid) {
+        $('#formAlert').removeClass('d-none alert-danger').addClass('alert-success').html(
+            '<strong>Registration Successful!</strong> Welcome to contamination zone, Hunter ' + nameInput + '. Your data already enter board!'
+        );
+
+        addToRecruitmentBoard(nameInput, zoneInput);
+        $('#cmdName').val('');
+        $('#cmdZone').val('');
+
+        setTimeout(function() {
+            $('#formAlert').addClass('d-none');
+        }, 4000);
+    }
+});
+
 });

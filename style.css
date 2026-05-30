@@ -482,3 +482,19 @@ section#recruitment {
     text-overflow: ellipsis;
     display: block;
 }
+
+#contact .contact-inner {
+    width: 100%;
+    max-width: 540px;
+    padding: 0 1rem;
+}
+
+.text-muted {
+    color: #cbd5e1 !important;
+}
+
+.form-label,
+label.form-label {
+    color: #e2e8f0 !important;
+    font-weight: 600;
+}
