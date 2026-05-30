@@ -146,4 +146,24 @@ function applyRecruitFilter() {
 $('#recruitSearch').on('input', applyRecruitFilter);
 $('#recruitFilter').on('change', applyRecruitFilter);
 
+function toggleStatus(btn) {
+    if (btn.classList.contains('pending')) {
+        btn.classList.replace('pending', 'approved');
+        btn.textContent = 'APPROVED';
+    } else if (btn.classList.contains('approved')) {
+        btn.classList.replace('approved', 'rejected');
+        btn.textContent = 'REJECTED';
+    } else {
+        btn.classList.replace('rejected', 'pending');
+        btn.textContent = 'PENDING';
+    }
+    updateRecruitCounter();
+}
+
+function dismissRow(btn) {
+    $(btn).closest('tr').fadeOut(300, function() {
+        $(this).remove();
+        updateRecruitCounter();
+    });
+}
 });
